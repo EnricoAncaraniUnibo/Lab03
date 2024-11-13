@@ -2,18 +2,34 @@ package it.unibo.encapsulation;
 
 public class Calculator {
 
-    int operationsPerformed;
-    double lastResult;
+    private int operationsPerformed;
+    private double lastResult;
 
     public Calculator() {
         this.operationsPerformed = 0;
         this.lastResult = 0;
     }
 
-    private double updateStatus(final double val) {
-        this.lastResult = val;
-        this.operationsPerformed++;
+    public int getOperationsPerformed() {
+        return this.operationsPerformed;
+    }
+
+    public double getLastResult() {
         return this.lastResult;
+    }
+
+    public void setOperationsPerformed(int operationsPerformed) {
+        this.operationsPerformed=operationsPerformed;
+    }
+
+    public void setLastResult(double lastResult) {
+        this.lastResult=lastResult;
+    }
+
+    private double updateStatus(final double val) {
+        this.setLastResult(val);
+        this.setOperationsPerformed(this.getOperationsPerformed()+1);
+        return this.getLastResult();
     }
 
     public double add(final double n1, final double n2) {
@@ -33,8 +49,8 @@ public class Calculator {
     }
 
     private static void printCalculatorStatus(final Calculator calc) {
-        System.out.println("operations performed: " + calc.operationsPerformed);
-        System.out.println("last result" + calc.lastResult + "\n");
+        System.out.println("operations performed: " + calc.getOperationsPerformed());
+        System.out.println("last result" + calc.getLastResult() + "\n");
     }
 
     public static void main(final String[] args) {
