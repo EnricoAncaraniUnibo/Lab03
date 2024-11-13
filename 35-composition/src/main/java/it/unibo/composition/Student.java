@@ -48,14 +48,17 @@ public class Student implements User {
             + "]";
     }
 
+    @Override
     public String getUsername() {
         return this.name + Student.DOT + this.surname;
     }
 
+    @Override
     public String getPassword() {
         return this.password;
     }
 
+    @Override
     public String getDescription() {
         return this.toString();
     }
