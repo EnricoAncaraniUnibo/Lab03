@@ -24,12 +24,14 @@ public class AccountHolder {
         return this.userID;
     }
 
+    @Override
     public String toString() {
-        // Should print name, surname, and account id.
-        return null;
+        return (""+this.getName()+" "+this.getSurname()+" "+String.valueOf(this.getUserID()));
     }
 
     public static void main(final String[] args) {
         System.out.println(new AccountHolder("Alex", "Ghini", 42));
+        AccountHolder ah=new AccountHolder("giacomo", "verdi", 150);
+        System.out.println(ah.toString());
     }
 }
