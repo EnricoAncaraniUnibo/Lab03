@@ -6,7 +6,7 @@ public class Professor implements User{
     private final String name;
     private final String surname;
     private final String password;
-    private final String[] courses;
+    private String[] courses;
 
     public Professor(final int id, final String name, final String surname, final String password, final String[] courses) {
         this.id = id;
@@ -18,20 +18,40 @@ public class Professor implements User{
 
     @Override
     public String getUsername() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUsername'");
+        return this.name + "." + this.surname;
     }
 
     @Override
     public String getPassword() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPassword'");
+        return this.password;
     }
 
     @Override
     public String getDescription() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getDescription'");
+       return this.toString();
     }
     
+    public String getName() {
+        return this.name;
+    }
+
+    public String getSurname() {
+        return this.surname;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public String[] getCourses() {
+        return this.courses;
+    }
+
+    public void replaceCourse(final String corso, final int index) {
+        this.courses[index] = corso;
+    }
+
+    public void replaceAllCourses(final String[] corsi) {
+        this.courses = corsi;
+    }
 }
