@@ -61,6 +61,6 @@ public class Exam {
     }
 
     public String toString() {
-        return this.getId() + " " + this.getCourse() + " " + this.getProfessor().getUsername() + " " + this.getRoom().getDescription() + " " + Arrays.toString(this.getStudents());
+        return this.getId() + " " + this.getCourse() + " " + this.getProfessor().getUsername() + " " + this.getRoom().getDescription() + " " + Arrays.toString(this.getStudents()) + "\n";
     }
 }
